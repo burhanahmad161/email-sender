@@ -38,6 +38,7 @@ const emailTemplate = (recipientName, amount, senderName) => `
             font-size: 17px;
       width: 85%;
       color: black;
+      list-style-type: none;
       }
       .content li{
         margin-top: 5px;
