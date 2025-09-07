@@ -8,6 +8,7 @@ export default function Home() {
     amount: "",
     senderName: "",
     recipientEmail: "",
+    memo: "",
   });
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -39,6 +40,7 @@ export default function Home() {
           amount: "",
           senderName: "",
           recipientEmail: "",
+          memo: "",
         });
       }
     } catch (error) {
@@ -119,6 +121,20 @@ export default function Home() {
               className="block w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 placeholder-gray-400"
               placeholder="Enter recipient email"
               required
+            />
+          </div>
+          <div className="relative">
+            <label htmlFor="memo" className="block text-sm font-medium text-gray-300 mb-1">
+              Memo
+            </label>
+            <input
+              type="text"
+              name="memo"
+              id="memo"
+              value={formData.memo}
+              onChange={handleInputChange}
+              className="block w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 placeholder-gray-400"
+              placeholder="Enter a memo"
             />
           </div>
 

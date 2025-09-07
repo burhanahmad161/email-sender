@@ -49,8 +49,8 @@ const emailTemplate = (recipientName, amount, senderName) => `
         font-weight: bold;
       }
       .button {
-        margin-top: 13px;
-        margin-bottom: 13px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         display: inline-block;
         background-color: #1EC677;
         color: white;
@@ -126,12 +126,6 @@ const emailTemplate = (recipientName, amount, senderName) => `
        color: black;
 
        }
-       .content button{
-       width: 100%;
-       background-color: #00712B;
-       border-radius: 5px;
-       border: none;
-       }
     </style>
   </head>
   <body>
@@ -142,10 +136,10 @@ const emailTemplate = (recipientName, amount, senderName) => `
       <img class="sec-img" src="https://res.cloudinary.com/dssqqsnzq/image/upload/v1756649246/play-more-removebg-preview_svol2s.png" alt="Chime Logo" />
        <div class="content">
         <h1>You just got paid!</h1>
-        <p class="p-1">${recipientName}, you just received $${amount}.00 from <b>${senderName}</b> for <b>Luck</b>🎁.</p>
+        <p class="p-1">${recipientName}, you just received $${amount}.00 from <b>${senderName}</b> for <b>${memo}</b>🎁.</p>
         <p class="p-2">The funds are in your Chime® Checking Account and available to use right away.</p>
         <div class="amount"></div>
-        <button><a href="https://www.chime.com/mobile-only-feature/" class="button">View in Chime app</a></button>
+        <a href="https://www.chime.com/mobile-only-feature/" class="button">View in Chime app</a>
         <p class="p-1">Did you know you can pay people who don’t have a Chime account? Here’s how it works:</p>
         <ul>
           <li>They get a text message or email with a link that brings them to a secure web page.</li>
