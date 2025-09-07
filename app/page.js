@@ -177,5 +177,6 @@ export default function Home() {
         </form>
       </div>
     </div>
+    // <PreviewEmailTemplate recipientName="Burhan" amount={100} senderName="Alice" memo="Payment for services" />
   );
 }

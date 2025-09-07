@@ -3,8 +3,8 @@ import emailTemplate from '@/app/emailTemplate';
 
 export async function POST(req) {
   try {
-    const { recipientName, amount, senderName, recipientEmail } = await req.json();
-    console.log("Data in API function is:", recipientEmail, amount, senderName, recipientName);
+    const { recipientName, amount, senderName, recipientEmail,memo } = await req.json();
+    console.log("Data in API function is:", recipientEmail, amount, senderName, recipientName, memo);
 
     // Create a transporter for Zoho Mail
     // const transporter = nodemailer.createTransport({
@@ -33,7 +33,7 @@ export async function POST(req) {
       to: recipientEmail, // Recipient email
       subject: `${senderName} just sent you money 💸`,
       text: "The funds are in your Chime® Checking Account and available to use right away.",
-      html: emailTemplate(recipientName, amount, senderName), // HTML body
+      html: emailTemplate(recipientName, amount, senderName, memo), // HTML body
     };
 
     // Send email

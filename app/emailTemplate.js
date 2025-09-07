@@ -1,4 +1,4 @@
-const emailTemplate = (recipientName, amount, senderName) => `
+const emailTemplate = (recipientName, amount, senderName, memo) => `
   <!DOCTYPE html>
   <html>
   <head>
@@ -39,9 +39,10 @@ const emailTemplate = (recipientName, amount, senderName) => `
       width: 85%;
       color: black;
       list-style-type: none;
+      padding-left: 0;
       }
       .content li{
-        margin-top: 5px;
+        margin-top: 9px;
         word-spacing: 3px;
         color: black;
       }
@@ -50,16 +51,18 @@ const emailTemplate = (recipientName, amount, senderName) => `
         font-weight: bold;
       }
       .button {
+      padding: 10px 15px;
         margin-top: 20px;
         margin-bottom: 20px;
         display: inline-block;
         background-color: #1EC677;
         color: white;
-        width: 80%;
+        width: 85%;
         text-decoration: none;
         font-weight: bold;
         font-size: 15px;
         text-align: center;
+        border-radius: 5px;
       }
       .content a{
       color: white;
