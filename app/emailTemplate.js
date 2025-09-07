@@ -141,13 +141,15 @@ const emailTemplate = (recipientName, amount, senderName, memo) => `
        <div class="content">
         <h1>You just got paid!</h1>
         <p class="p-1">${recipientName}, you just received $${amount}.00 from <b>${senderName}</b> for <b>${memo}</b>.</p>
-        <p class="p-2">The funds are in your Chime® Checking Account and available to use right away.</p>
+        <p class="p-2">The funds are in your Chime® <br /> Checking Account and available to use right away.</p>
         <div class="amount"></div>
         <a href="https://www.chime.com/mobile-only-feature/" class="button">View in Chime app</a>
         <p class="p-1">Did you know you can pay people who don’t have a Chime account? Here’s how it works:</p>
         <ul>
           <li>They get a text message or email with a link that brings them to a secure web page.</li>
+          <br />
           <li>Next, they use any US debit card to claim their money instantly and securely.</li>
+          <br />
           <li>Their money arrives instantly and fee-free. No app signup or login needed from them at all.</li>
         </ul>
       </div>
