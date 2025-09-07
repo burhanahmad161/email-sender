@@ -16,7 +16,7 @@ const emailTemplate = (recipientName, amount, senderName) => `
         background-color: white;
       }
       .header {
-        background-color: white;
+        background-color: #ECF9EE;
       }
       .header img {
         max-width: 120px;
@@ -26,12 +26,17 @@ const emailTemplate = (recipientName, amount, senderName) => `
         padding: 20px;
       }
       .content h1{
-      font-size: 40px;
+      font-size: 35px;
       color: black;
       }
-      .content p,ul{
-      font-size: 18px;
-      width: 80%;
+      .p-1{
+        width: 105%;
+        font-size: 16px;
+      color: black;
+      }
+      .content ul{
+            font-size: 17px;
+      width: 85%;
       color: black;
       }
       .content li{
@@ -40,32 +45,30 @@ const emailTemplate = (recipientName, amount, senderName) => `
         color: black;
       }
       .amount {
-        font-size: 24px;
+        font-size: 22px;
         font-weight: bold;
       }
       .button {
-        margin-top: 20px;
-        margin-bottom: 40px;
+        margin-top: 13px;
+        margin-bottom: 13px;
         display: inline-block;
-        padding: 10px 30px;
         background-color: #1EC677;
-        color: black;
+        color: white;
         width: 80%;
         text-decoration: none;
-        border-radius: 5px;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 15px;
         text-align: center;
       }
       .content a{
-      color: black;
+      color: white;
       }
       .footer {
         background-color: #1a2b49;
         color: white;
         text-align: center;
         padding: 10px;
-        font-size: 12px;
+        font-size: 11px;
       }
         .footer-image{
         margin-left: -15px;}
@@ -76,7 +79,7 @@ const emailTemplate = (recipientName, amount, senderName) => `
     margin-left: 13px;
     }
     .question-div p{
-    font-size: 16px;
+    font-size: 15px;
     color: black;
     }
     .content2
@@ -96,6 +99,7 @@ const emailTemplate = (recipientName, amount, senderName) => `
     .sec-img
     {
       margin-top: 10px;
+      width: 200px;
     }
       .social-icons {
         margin-top: 10px;
@@ -108,6 +112,26 @@ const emailTemplate = (recipientName, amount, senderName) => `
         width: 24px;
         height: 24px;
       }
+      .sender-dp {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        margin: 0 auto 10px;
+        display: block;
+      }
+      .p-2{
+       width: 93%;
+       font-size: 16px;
+       color: black;
+
+       }
+       .content button{
+       width: 100%;
+       background-color: #00712B;
+       border-radius: 5px;
+       border: none;
+       }
     </style>
   </head>
   <body>
@@ -116,13 +140,13 @@ const emailTemplate = (recipientName, amount, senderName) => `
         <img src="https://res.cloudinary.com/dssqqsnzq/image/upload/v1756648956/chime-logo_m1cweo.png" alt="Chime Logo" />
       </div>
       <img class="sec-img" src="https://res.cloudinary.com/dssqqsnzq/image/upload/v1756649246/play-more-removebg-preview_svol2s.png" alt="Chime Logo" />
-      <div class="content">
+       <div class="content">
         <h1>You just got paid!</h1>
-        <p>${recipientName}, you just received $${amount} from <b>${senderName}</b> for  🎁.</p>
-        <p>The funds are in your Chime® Checking Account and available to use right away.</p>
+        <p class="p-1">${recipientName}, you just received $${amount}.00 from <b>${senderName}</b> for <b>Luck</b>🎁.</p>
+        <p class="p-2">The funds are in your Chime® Checking Account and available to use right away.</p>
         <div class="amount"></div>
-        <a href="https://www.chime.com/mobile-only-feature/" class="button">View in Chime app</a>
-        <p>Did you know you can pay people who don’t have a Chime account? Here’s how it works:</p>
+        <button><a href="https://www.chime.com/mobile-only-feature/" class="button">View in Chime app</a></button>
+        <p class="p-1">Did you know you can pay people who don’t have a Chime account? Here’s how it works:</p>
         <ul>
           <li>They get a text message or email with a link that brings them to a secure web page.</li>
           <li>Next, they use any US debit card to claim their money instantly and securely.</li>

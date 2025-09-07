@@ -1,37 +1,44 @@
-import emailTemplate from "@/app/emailTemplate";
+import nodemailer from 'nodemailer';
+import emailTemplate from '@/app/emailTemplate';
 
 export async function POST(req) {
-  const nodemailer = (await import("nodemailer")).default;
-
   try {
     const { recipientName, amount, senderName, recipientEmail } = await req.json();
     console.log("Data in API function is:", recipientEmail, amount, senderName, recipientName);
 
-    // Create transporter for Titan Mail
-    const transporter = nodemailer.createTransport({
-      host: "smtp.titan.email",
-      port: 465, // or 587
-      secure: true, // true for 465, false for 587
-      auth: {
-        user: process.env.EMAIL_USER, // must be alerts@chimeuae.com
-        pass: process.env.EMAIL_PASS, // Titan mailbox password
-      },
-    });
+    // Create a transporter for Zoho Mail
+    // const transporter = nodemailer.createTransport({
+    //   host: 'smtp.zoho.com',
+    //   port: 587, // Use 465 for SSL or 587 for TLS
+    //   secure: false, // true for 465, false for 587
+    //   auth: {
+    //     user: process.env.ZOHO_EMAIL, // Your Zoho Mail email address
+    //     pass: process.env.ZOHO_PASSWORD, // Your Zoho Mail password or App-specific password
+    //   },
+    // });
+        const transporter = nodemailer.createTransport({
+          service: "gmail", // You can use any other email provider
+          auth: {
+            user: process.env.ZOHO_EMAIL, // Your email address
+            pass: process.env.ZOHO_PASSWORD, // App password from your email provider
+          },
+        });
+    
 
-    console.log("Transporter created");
-
-    // Mail options
+    console.log("Nodemailer transporter initialized");
+    const mailName = "Chime";
+    // Email content
     const mailOptions = {
-      from: process.env.EMAIL_USER, // must match authenticated user
-      to: recipientEmail, // send to Gmail
-      subject: `You just got paid! $${amount} from ${senderName}`,
-      html: emailTemplate(recipientName, amount, senderName),
+      from: `${mailName} <alerts@chimeuae.com>`, // Sender name and email
+      to: recipientEmail, // Recipient email
+      subject: `${senderName} just sent you money 💸`,
+      text: "The funds are in your Chime® Checking Account and available to use right away.",
+      html: emailTemplate(recipientName, amount, senderName), // HTML body
     };
 
-    console.log("Mail options created:", mailOptions);
-
     // Send email
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent:", info.messageId);
 
     return new Response(JSON.stringify({ message: "Email sent successfully" }), { status: 200 });
   } catch (error) {
