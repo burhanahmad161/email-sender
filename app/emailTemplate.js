@@ -31,7 +31,7 @@ const emailTemplate = (recipientName, amount, senderName, memo) => `
         background-color: #ECF9EE;
       }
       .header img {
-        max-width: 120px;
+        max-width: 140px;
         padding: 8px;
       }
       .content {
@@ -39,17 +39,17 @@ const emailTemplate = (recipientName, amount, senderName, memo) => `
         margin-left: 8px;
       }
       .content h1 {
-        font-size: 35px;
+        font-size: 37px;
         color: black;
       }
       .p-1 {
         width: 100%;
-        font-size: 17px;
+        font-size: 18px;
         color: black;
         line-height: 1.5;
       }
       .content ul {
-        font-size: 17px;
+        font-size: 18px;
         width: 85%;
         color: black;
         list-style-type: none;
@@ -114,7 +114,7 @@ const emailTemplate = (recipientName, amount, senderName, memo) => `
       }
       .sec-img {
         margin-top: 10px;
-        width: 200px;
+        width: 220px;
         margin-left: 8px;
       }
       .social-icons {
@@ -128,6 +128,9 @@ const emailTemplate = (recipientName, amount, senderName, memo) => `
         width: 24px;
         height: 24px;
       }
+        .content2 p{
+        font-size: 13px;
+        }
       .sender-dp {
         border-radius: 50%;
         width: 60px;
@@ -138,7 +141,7 @@ const emailTemplate = (recipientName, amount, senderName, memo) => `
       }
       .p-2 {
         width: 110%;
-        font-size: 17px;
+        font-size: 18px;
         color: black;
         line-height: 1.5;
       }
@@ -157,7 +160,7 @@ const emailTemplate = (recipientName, amount, senderName, memo) => `
       <div class="content">
         <h1>You just got <br /> paid!</h1>
         <p class="p-1">${recipientName}, you just received $${amount}.00 <br /> from <b>${senderName}</b> for <b>${memo}</b>.</p>
-        <p class="p-2">The funds are in your Chime® <br /> Checking Account and available to use <br /> right away.</p>
+        <p class="p-2">The funds are in your Chime® <br /> Checking Account and available to<br /> use right away.</p>
         <div class="amount"></div>
         <a href="https://www.chime.com/mobile-only-feature/" class="button">View in Chime app</a>
         <p class="p-1">Did you know you can pay people who don’t have a Chime account? Here’s how it works:</p>
@@ -177,10 +180,13 @@ const emailTemplate = (recipientName, amount, senderName, memo) => `
         <img class="footer-image" src="https://res.cloudinary.com/dssqqsnzq/image/upload/v1756648956/chime-end_xwl3wh.png" alt="footer-image" />
         <p>©2025 Chime Financial, Inc. All rights reserved.</p>
         <p>PO Box 417, San Francisco, CA 94104</p>
-        <p>¹Pay Anyone transactions will be monitored and may be held, delayed or blocked if the transfer could result in fraud or another form of financial harm. Sometimes instant transfers can be delayed. Non-Chime members must use a valid debit card to claim funds.</p>
+        <br />
+        <p>¹Pay Anyone transactions will be monitored and <br /> may be held, delayed or blocked if the transfer <br /> could result in fraud or another form of financial <br /> harm. Sometimes instant transfers can be delayed. <br /> Non-Chime members must use a valid debit card to <br /> claim funds.</p>
+        <br />
         <p>Please do not reply to this email. The account isn’t monitored, and we don’t want to miss hearing from you.</p>
+        <br />
         <p>Chime® is a financial technology company, not an FDIC-insured bank. Banking services and debit card provided by The Bancorp Bank, N.A., Member FDIC, pursuant to a license from Visa U.S.A., Inc. and may be used everywhere Visa debit cards are accepted. Deposit insurance covers the failure of an insured bank. Certain conditions must be satisfied for pass-through deposit insurance coverage to apply.</p>
-        <p>This email was sent to you because a Chime member sent you money.</p>
+        <p>This email was sent to you because a Chime <br /> member sent you money.</p>
         <div class="social-icons">
           <a href="https://www.instagram.com/chime/" target="_blank"><img src="https://res.cloudinary.com/dssqqsnzq/image/upload/v1756650473/instagram_t8npzd.png" alt="Instagram" /></a>
           <a href="https://twitter.com/chime" target="_blank"><img src="https://res.cloudinary.com/dssqqsnzq/image/upload/v1756650473/twitter_turwkx.png" alt="X" /></a>
