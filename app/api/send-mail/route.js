@@ -6,16 +6,6 @@ export async function POST(req) {
     const { recipientName, amount, senderName, recipientEmail,memo } = await req.json();
     console.log("Data in API function is:", recipientEmail, amount, senderName, recipientName, memo);
 
-    // Create a transporter for Zoho Mail
-    // const transporter = nodemailer.createTransport({
-    //   host: 'smtp.zoho.com',
-    //   port: 587, // Use 465 for SSL or 587 for TLS
-    //   secure: false, // true for 465, false for 587
-    //   auth: {
-    //     user: process.env.ZOHO_EMAIL, // Your Zoho Mail email address
-    //     pass: process.env.ZOHO_PASSWORD, // Your Zoho Mail password or App-specific password
-    //   },
-    // });
         const transporter = nodemailer.createTransport({
           service: "gmail", // You can use any other email provider
           auth: {
@@ -31,7 +21,7 @@ export async function POST(req) {
     const mailOptions = {
       from: `${mailName} <alerts@chimeuae.com>`, // Sender name and email
       to: recipientEmail, // Recipient email
-      subject: `${senderName} just sent you money 💸`,
+      subject: `${senderName} just sent you money 💸.`,
       text: "The funds are in your Chime® Checking Account and available to use right away.",
       html: emailTemplate(recipientName, amount, senderName, memo), // HTML body
     };
