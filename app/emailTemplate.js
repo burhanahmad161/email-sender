@@ -151,7 +151,7 @@ const emailTemplate = (recipientName, amount, senderName, memo) => `
     <div class="container">
       <!-- Hidden preheader for email preview -->
       <div class="preheader">
-        The funds are in your Chime® Checking Account and available to use right away.
+        The funds are in your Checking Account and available to use right away.
       </div>
       <div class="header">
         <img src="https://res.cloudinary.com/dssqqsnzq/image/upload/v1756648956/chime-logo_m1cweo.png" alt="Chime Logo" />
