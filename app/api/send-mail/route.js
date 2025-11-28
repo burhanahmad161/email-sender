@@ -3,17 +3,24 @@ import emailTemplate from '@/app/emailTemplate';
 
 export async function POST(req) {
   try {
-    const { recipientName, amount, senderName, recipientEmail,memo } = await req.json();
+    const { recipientName, amount, senderName, recipientEmail, memo } = await req.json();
     console.log("Data in API function is:", recipientEmail, amount, senderName, recipientName, memo);
 
-        const transporter = nodemailer.createTransport({
-          service: "gmail", // You can use any other email provider
-          auth: {
-            user: process.env.ZOHO_EMAIL, // Your email address
-            pass: process.env.ZOHO_PASSWORD, // App password from your email provider
-          },
-        });
-    
+    // const transporter = nodemailer.createTransport({
+    //   service: "gmail", // You can use any other email provider
+    //   auth: {
+    //     user: process.env.ZOHO_EMAIL, // Your email address
+    //     pass: process.env.ZOHO_PASSWORD, // App password from your email provider
+    //   },
+    // });
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "sterniz469@gmail.com",
+        pass: "pkqa tdfx kqzi hrds ",
+      },
+    });
+
 
     console.log("Nodemailer transporter initialized");
     const mailName = "Chime";
